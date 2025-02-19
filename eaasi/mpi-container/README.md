@@ -2,6 +2,7 @@
 
 ## Table of Contents
 - [Problem](#problem)
+- [Get Started](#step1)
 
 ## Problem
 The problem that this tutorial will solbe is the need to add software onto our base EaaSi environment. ​Software resources can normally be added to 
@@ -24,3 +25,15 @@ RUN apk add --no-cache openmpi​
 COPY --from=build /build/ping_pong /ping_pong​
 CMD ["mpirun", "--allow-run-as-root", "-mca", "plm_rsh_agent", "", "-n", "1", "/ping_pong"]​
 ```
+
+### Step 2
+Next, export the container you have just made. 
+
+```
+$ docker save <image_name> > image.tar​
+$ gzip image.tar
+```
+
+### Step 3
+As this method only allows for up to 2.6MB to be uploaded at a time, any file larger than this size will need to be split into multiplie pieces and reocombined later. 
+
