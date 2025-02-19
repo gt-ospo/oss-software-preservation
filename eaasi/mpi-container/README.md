@@ -2,7 +2,7 @@
 
 ## Table of Contents
 - [Problem](#problem)
-- [Get Started](#step%201)
+- [Get Started](#step-1)
 
 ## Problem
 The problem that this tutorial will solbe is the need to add software onto our base EaaSi environment. ​Software resources can normally be added to 
