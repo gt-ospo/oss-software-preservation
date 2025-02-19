@@ -67,6 +67,7 @@ Place the `image.tar.gzaa​​` file in your home directory. We have successful
 
 ### Step 8
 Press the save emulation button. 
+
 <img width="295" alt="Screenshot 2025-02-19 at 8 55 27 AM" src="https://github.com/user-attachments/assets/f65a0979-366f-49c7-bef2-343b978c6d9f" />
 
 ### Step 9
