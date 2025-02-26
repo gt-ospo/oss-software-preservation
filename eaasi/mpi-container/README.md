@@ -10,8 +10,9 @@ environments as an externally mounted drive​. Unfortunately, this does not wor
 this tutorial demonstrates the currently best known work around method for uploading software resources to EaaSi. 
 
 ### Step 1
-First, create a container that you want to upload using a Dockerfile​. An example of an OpenMPI container is shown below. 
+First, create a container that you want to upload using a Dockerfile​. An example of an OpenMPI container `Dockerfile` is shown below. 
 
+Save as `<working_directory>/Dockerfile`:
 ```
 FROM alpine:3.21.2@sha256:56fa17d2a7e7f168a043a2712e63aed1f8543aeafdcee47c58dcffe38ed51099 AS build​
 RUN apk add --no-cache openmpi​
@@ -30,6 +31,9 @@ CMD ["mpirun", "--allow-run-as-root", "-mca", "plm_rsh_agent", "", "-n", "1", "/
 Next, export the container you have just made. 
 
 ```
+$ cd <working_directory>
+$ ls Dockerfile # make sure Dockerfile is in working directory
+$ docker build .
 $ docker save <image_name> > image.tar​
 $ gzip image.tar
 ```
@@ -51,7 +55,7 @@ Tar each of the files produced in the previous step. Note that this will result 
 `image.tar.gzaa → image.tar.gzaa.tar​​`
 
 ### Step 5
-Use the method shown in this tutorial to upload the first of the split files onto EaaSi. 
+Use [the method shown in this tutorial](./INDIVIDUAL_FILE.md) to upload the first of the split files onto EaaSi. 
 
 ### Step 6
 Now, the data from the split files is present on the floppy disk attached to the EaaSi machine. We need to save this data onto the machine so that we can rebuild our original container. 
