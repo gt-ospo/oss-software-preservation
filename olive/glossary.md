@@ -6,5 +6,10 @@
 - VMNetX (app)
   - A GUI app that can stream a VM (like a YouTube video; download parts of the disk as required)
 - VMNetFS (`vmnetfs`)
-  - [FUSE](https://www.kernel.org/doc/html/next/filesystems/fuse.html) filesystem used for VMNetX for disk streaming
+  - FUSE filesystem used for VMNetX for disk streaming
   - Like OneDrive, files are downloaded on demand; if of a 20GiB disk, only e.g. 3GiB is used for startup, we save 17GiB of network bandwidth
+- FUSE
+  - [FUSE](https://www.kernel.org/doc/html/next/filesystems/fuse.html) is a kernel API that allows implementing filesystems through a userspace process (i.e. without editing the kernel source or loading a kernel module)
+- GTK
+  - GUI toolkit/library
+  
