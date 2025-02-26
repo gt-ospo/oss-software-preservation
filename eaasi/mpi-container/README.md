@@ -55,10 +55,10 @@ Tar each of the files produced in the previous step. Note that this will result 
 `image.tar.gzaa → image.tar.gzaa.tar​​`
 
 ### Step 5
-Use [the method shown in this tutorial](./INDIVIDUAL_FILE.md) to upload the first of the split files onto EaaSi. 
+[Upload the first part of the split file onto EaaSI](./INDIVIDUAL_FILE.md).
 
 ### Step 6
-Now, the data from the split files is present on the floppy disk attached to the EaaSi machine. We need to save this data onto the machine so that we can rebuild our original container. 
+Now, the data from the first part of the split file is present on the floppy disk attached to the EaaSi machine. We need to save this data onto the machine so that we can rebuild our original container. 
 
 Open any terminal program and run the following command: 
 `sudo tar mxf /dev/fd0​​`
