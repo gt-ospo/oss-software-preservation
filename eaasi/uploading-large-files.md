@@ -32,16 +32,17 @@ This split command will produce multiple new files within the current directory.
 
 The suffexes in the file names (`aa`, `ab`, etc.) represent the order of the split files in relation to that data's position within the original file. In other words, data from the start of the original large file will be located in the chunk with the smallest lexographical suffix. 
 
-### Step 4
-Tar each of the files produced in the previous step. Note that this will result in `2` "layers of tarring". 
+### Step 3
+Tar each of the chunks produced in the previous step with the following command. Note that if you are using the example file, this will result in `2` "layers of tarring" (ex `image.tar.gzaa` will become `image.tar.gzaa.tar​​`). 
 
-`image.tar.gzaa → image.tar.gzaa.tar​​`
+Command: `tar -cvf <chunk_name>.tar <chunk_name>
+Example usage: `tar -cvf image.tar.gzaa.tar image.tar.gzaa`
+
+### Step 4
+[Upload the first chunk of the split file onto EaaSI](./uploading-small-files.md).
 
 ### Step 5
-[Upload the first part of the split file onto EaaSI](./INDIVIDUAL_FILE.md).
-
-### Step 6
-Now, the data from the first part of the split file is present on the floppy disk attached to the EaaSi machine. We need to save this data onto the machine so that we can rebuild our original container. 
+Now, the data from the first chunk of the split file is present on the floppy disk attached to the EaaSi machine. We need to save this data onto the machine so that we can rebuild our original file. 
 
 Open any terminal program and run the following command: 
 `sudo tar mxf /dev/fd0​​`
@@ -49,29 +50,32 @@ Open any terminal program and run the following command:
 This will untar the first layer of the tarred file. 
 `image.tar.gzaa.tar → image.tar.gzaa​​`
 
-### Step 7
-Place the `image.tar.gzaa​​` file in your home directory. We have successfully imported the first piece of the split image to EaaSi. Shut down the VM using `shutdown now` in the terminal. 
+### Step 6
+Place the `image.tar.gzaa​​` file in your home directory. We have successfully imported the first piece of the split file to EaaSi. Shut down the VM using `shutdown now` in the terminal. 
 
-### Step 8
+### Step 7
 Press the save emulation button. 
 
 <img width="295" alt="Screenshot 2025-02-19 at 8 55 27 AM" src="https://github.com/user-attachments/assets/f65a0979-366f-49c7-bef2-343b978c6d9f" />
 
+### Step 8
+Repeat steps 4-8 for every chunk of the split container. 
+
 ### Step 9
-Repeat steps 5-8 for every section of the split container. 
+At this step, all of the sections of the container should be uploaded to EaaSi as `tar` files. These sections need to be recombined again in order to be extracted and used. Before proceeding, ensure that all of the chunks that represent your original file are present in your current EaaSi instance directory. Next, run this command to combine all the chunks into one file: 
+
+Command: `cat <file_name>?? | <file_name>.tar.gz​`
+Example Usage: `cat image.tar.gz?? | image.tar.gz​`
 
 ### Step 10
-At this step, all of the sections of the container should be uploaded to EaaSi as `tar` files. These sections need to be recombined again in order to be extracted and used. 
+Uncompress 
 
-```
-$ cat image.tar.gz?? | image.tar.gz​
-$ gzip –d image.tar.gz # image.tar.gz → image.tar​
-```
+gzip –d image.tar.gz # image.tar.gz → image.tar​
 
-### Step 11
+### Step 10
 Import and run the docker image as usual:
 
 ```
-$ docker load < image.tar​
-$ docker run <image_identifier>​
+docker load < image.tar​
+docker run <image_identifier>​
 ```
