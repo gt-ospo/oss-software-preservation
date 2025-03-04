@@ -6,7 +6,7 @@
 - [Get Started](#step-1)
 
 ## Problem
-The problem that this tutorial will solve is the need to add software onto our base EaaSi environment. This tutorial will focus on files with a size greater than 2.6MB. For files smaller than this size, this simpler turotial can be followed. 
+The problem that this tutorial will solve is the need to add software onto our base EaaSi environment. This tutorial will focus on files with a size greater than 2.6MB. For files smaller than 2.6MB size, [this](./uploading-small-files.md)  simpler turotial can be followed. 
 
 ## Constraints
 With this method, the maximum allowed size for an upload is 2.6MB. The team is currently working on finding methods to increase this uload size. However, for now, files larger than this size will need to be split into multiple chunks and uploaded seperately. 
