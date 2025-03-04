@@ -1,5 +1,10 @@
 # Dioscuri Emulator​
 
+Dates: 
+- Initial release: 2007
+- Last updates: 2011
+
+
 - Shortened summary, not useful for software preservation purposes. 
 - Developed by the National Library of the Netherlands​
 - Focused on digital longevity, x86-based software can be executed indefinitely without hardware dependencies (hardware is emulated too).​
