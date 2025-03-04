@@ -35,7 +35,9 @@ The suffexes in the file names (`aa`, `ab`, etc.) represent the order of the spl
 ### Step 3
 Tar each of the chunks produced in the previous step with the following command. Note that if you are using the example file, this will result in `2` "layers of tarring" (ex `image.tar.gzaa` will become `image.tar.gzaa.tar​​`). 
 
-Command: `tar -cvf <chunk_name>.tar <chunk_name>
+
+Command: `tar -cvf <chunk_name>.tar <chunk_name>`
+
 Example usage: `tar -cvf image.tar.gzaa.tar image.tar.gzaa`
 
 ### Step 4
@@ -65,6 +67,7 @@ Repeat steps 4-8 for every chunk of the split container.
 At this step, all of the sections of the container should be uploaded to EaaSi as `tar` files. These sections need to be recombined again in order to be extracted and used. Before proceeding, ensure that all of the chunks that represent your original file are present in your current EaaSi instance directory. Next, run this command to combine all the chunks into one file: 
 
 Command: `cat <file_name>?? | <file_name>.tar.gz​`
+
 Example Usage: `cat image.tar.gz?? | image.tar.gz​`
 
 ### Step 10
