@@ -2,72 +2,69 @@
 
 ## Table of Contents
 - [Problem](#problem)
-- [Constraints](#constraints)
+- [Overview](#overview)
 - [Get Started](#step-1)
 
 ## Problem
 The problem that this tutorial will solve is the need to add software onto our base EaaSi environment. This tutorial will focus on files with a size greater than 2.6MB. For files smaller than 2.6MB size, [this](./uploading-small-files.md)  simpler turotial can be followed. 
 
-## Constraints
-With this method, the maximum allowed size for an upload is 2.6MB. The team is currently working on finding methods to increase this uload size. However, for now, files larger than this size will need to be split into multiple chunks and uploaded seperately. 
+## Overview
+Since we currently can not support uploading files larger than 2.6MB in a single attempt, we need to split larger files into multiple small chunks. These chunks are uploaded individually from your local machine to an Eaasi Lubuntu instance. Once uploaded to the Eaasi instance, these chunks are recombined back into the large original file. 
 
 ### Step 1
-Log into EaaSi. 
+On your local machine, `cd` to the directory of the large file you would like to upload to EaaSi. The file that we will be uploading in this tutorial has been is provided [here](../mpi-container/image.tar.gz).
 
-<img width="643" alt="Screenshot 2025-02-19 at 9 06 53 AM" src="https://github.com/user-attachments/assets/5f62ab06-bd02-462d-aabc-eb61f159be28" />
-
-### Step 2
-Click on "IMPORT RESOURCE"​. 
-
-<img width="643" alt="Screenshot 2025-02-19 at 9 07 17 AM" src="https://github.com/user-attachments/assets/1bea86e9-d3c2-4e1e-beac-8439162aea46" />
 
 ### Step 3
-Click on "Import Software"​. 
 
-<img width="711" alt="Screenshot 2025-02-19 at 9 07 43 AM" src="https://github.com/user-attachments/assets/7ac14127-7144-47db-900b-574881f718aa" />
+Assume we have the container, exported as image.tar:​
+`$ gzip image.tar​`
+
+We can split this `tar` file into multiple pieces by using the following command: 
+`$ split –bytes=2400000 image.tar.gz​`
+
+This will produce multiple files(`image.tar.gzaa`, `image.tar.gzab`, ...). 
 
 ### Step 4
-Add an appropriate name, then click continue. ​
+Tar each of the files produced in the previous step. Note that this will result in `2` "layers of tarring". 
 
-<img width="738" alt="Screenshot 2025-02-19 at 9 08 04 AM" src="https://github.com/user-attachments/assets/d3fd6422-48a2-4b5a-97e8-7df632e8e756" />
+`image.tar.gzaa → image.tar.gzaa.tar​​`
 
 ### Step 5
-Click "Browse My Computer" and select a file(s) you want to import. ​
-
-<img width="731" alt="Screenshot 2025-02-19 at 9 08 35 AM" src="https://github.com/user-attachments/assets/8e431719-6119-4f24-a98c-3cdb7af05608" />
+[Upload the first part of the split file onto EaaSI](./INDIVIDUAL_FILE.md).
 
 ### Step 6
-Important: Click on the "PHYSICAL FORMAT" drop down and select "Floppy"​
+Now, the data from the first part of the split file is present on the floppy disk attached to the EaaSi machine. We need to save this data onto the machine so that we can rebuild our original container. 
 
-<img width="731" alt="Screenshot 2025-02-19 at 9 09 04 AM" src="https://github.com/user-attachments/assets/09cfe106-5b82-44f1-b03d-34f1895e107b" />
+Open any terminal program and run the following command: 
+`sudo tar mxf /dev/fd0​​`
+
+This will untar the first layer of the tarred file. 
+`image.tar.gzaa.tar → image.tar.gzaa​​`
 
 ### Step 7
-Click "Finish Import"​
-
-<img width="712" alt="Screenshot 2025-02-19 at 9 09 29 AM" src="https://github.com/user-attachments/assets/8745be6d-e4d1-4365-9ecb-584b1abbf36f" />
+Place the `image.tar.gzaa​​` file in your home directory. We have successfully imported the first piece of the split image to EaaSi. Shut down the VM using `shutdown now` in the terminal. 
 
 ### Step 8
-Click on the "EXPLORE RESOURCES" tab​ and search for the "Environment Resource" you want to load your uploaded "Software Resource" onto. ​
+Press the save emulation button. 
 
-<img width="712" alt="Screenshot 2025-02-19 at 9 10 02 AM" src="https://github.com/user-attachments/assets/d28eff8f-cbd0-478c-a108-22d7e9a34dbf" />
+<img width="295" alt="Screenshot 2025-02-19 at 8 55 27 AM" src="https://github.com/user-attachments/assets/f65a0979-366f-49c7-bef2-343b978c6d9f" />
 
 ### Step 9
-Click on the check box next to the Environment Resource you want to use. The menu on the side should appear automatically. ​
-
-<img width="712" alt="Screenshot 2025-02-19 at 9 10 28 AM" src="https://github.com/user-attachments/assets/7cba6b3e-876c-4830-82db-35f6142e1651" />
+Repeat steps 5-8 for every section of the split container. 
 
 ### Step 10
-Click on Add Software​. 
+At this step, all of the sections of the container should be uploaded to EaaSi as `tar` files. These sections need to be recombined again in order to be extracted and used. 
 
-<img width="712" alt="Screenshot 2025-02-19 at 9 11 12 AM" src="https://github.com/user-attachments/assets/c5658b58-6a65-4fb6-b136-97cd4d081719" />
+```
+$ cat image.tar.gz?? | image.tar.gz​
+$ gzip –d image.tar.gz # image.tar.gz → image.tar​
+```
 
 ### Step 11
-Click on the drop down and select the Software Resource you want to import. ​
+Import and run the docker image as usual:
 
-<img width="727" alt="Screenshot 2025-02-19 at 9 11 36 AM" src="https://github.com/user-attachments/assets/04b0c5e1-d011-40f8-9e5f-562d2a699595" />
-
-### Step 12
-Click "Run"​
-
-<img width="727" alt="Screenshot 2025-02-19 at 9 11 58 AM" src="https://github.com/user-attachments/assets/57ea412e-ad82-4bcc-b480-b1c917a005dd" />
-
+```
+$ docker load < image.tar​
+$ docker run <image_identifier>​
+```
