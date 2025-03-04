@@ -14,11 +14,11 @@ Overview:
 
 Architecture: 
 - Java-based​
-- Multiple emulators (such as QEMU, DOSBox, and MAME)​
+- Multiple emulators (such as `QEMU`, `DOSBox`, and `MAME`)​
 - Emulation Registry: A metadata database that maps digital file formats to the necessary execution environment.​
 - Web-based UI​
-- Host OS: Windows, Linux, macOS (requires JRE)​
-- Emulated Platforms: x86 (DOS/Windows), Commodore 64/128, Amiga, Amstrad CPC, BBC Micro, Thomson.
+- Host OS: `Windows`, `Linux`, `macOS` (requires JRE)​
+- Emulated Platforms: `x86` (`DOS`/`Windows`), `Commodore 64/128`, `Amiga`, `Amstrad CPC`, `BBC Micro`, `Thomson`.
 
 
 Unique Features: 
@@ -29,8 +29,8 @@ Unique Features:
 
 
 Links: 
-- User Guide: https://emuframework.sourceforge.net/docs/System-User-Guide_2.0.pdf​
-- Website + Download: https://emuframework.sourceforge.net/users.html#:~:text=from%20small%20departmental%20servers%20to,vast%20silos
+- [User Guide](https://emuframework.sourceforge.net/docs/System-User-Guide_2.0.pdf​)
+- [Website + Download](https://emuframework.sourceforge.net/users.html#:~:text=from%20small%20departmental%20servers%20to,vast%20silos)
 
 
 ## Dioscuri Emulator​
