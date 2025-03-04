@@ -1,9 +1,7 @@
 # oss-software-preservation
-We will add all training material on how to do software preservation
+This repository contains documentation about different platforms that can be used for software preservation. 
 
-## Prerequisite Knowledge
-
-The following knowledge is assumed:
-
-- basic Linux commands / shell
-- basic Dockerfile/podman
+## Platforms
+- [EaaSi](./eaasi)
+- [Olive](./olive)
+- [Others](./other-platforms)
