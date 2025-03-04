@@ -1,7 +1,11 @@
 # KEEP Emulation Framework
 
+Dates: 
+- Initial release: 2011
+- Last updates: 2012
+
 Overview: 
-- Last release version: April 2012, no longer actively maintained​
+- No longer actively maintained​
 - Main purpose was to provide on-demand emulation services through an automated framework.
 
 
