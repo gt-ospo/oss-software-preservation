@@ -12,7 +12,7 @@ The problem that this tutorial will solve is the need to add software onto our b
 Since we currently can not support uploading files larger than 2.6MB in a single attempt, we need to split larger files into multiple small chunks. These chunks are uploaded individually from your local machine to an Eaasi Lubuntu instance. Once uploaded to the Eaasi instance, these chunks are recombined back into the large original file. 
 
 ### Step 1
-On your local machine, `cd` to the directory of the large file you would like to upload to EaaSi. The file that we will be uploading in this tutorial has been is provided [here](../mpi-container/image.tar.gz).
+On your local machine, `cd` to the directory of the large file you would like to upload to EaaSi. The file that we will be uploading in this tutorial has been is provided [here](./mpi-container/image.tar.gz).
 
 
 ### Step 3
