@@ -14,16 +14,23 @@ Since we currently can not support uploading files larger than 2.6MB in a single
 ### Step 1
 On your local machine, `cd` to the directory of the large file you would like to upload to EaaSi. The file that we will be uploading in this tutorial has been is provided [here](./mpi-container/image.tar.gz).
 
-
-### Step 3
-
-Assume we have the container, exported as image.tar:​
-`$ gzip image.tar​`
+### Step 2
+This example file is 7.59MB, which is larger than the 2.6MB limit. For this reason, it will need to be split into multiple chunks. 
 
 We can split this `tar` file into multiple pieces by using the following command: 
-`$ split –bytes=2400000 image.tar.gz​`
+`split –bytes=2400000 <image_name>​`
 
-This will produce multiple files(`image.tar.gzaa`, `image.tar.gzab`, ...). 
+For example, to split the example file within the current directory, the command will look like: 
+`split –bytes=2400000 image.tar.gz`
+
+This split command will produce multiple new files within the current directory. The names of the new files will contain the original file name followed by a sequence of characters. The example file should be split into 4 chunks named: 
+
+- `image.tar.gzaa`
+- `image.tar.gzab`
+- `image.tar.gzac`
+- `image.tar.gzad`
+
+The suffexes in the file names (`aa`, `ab`, etc.) represent the order of the split files in relation to that data's position within the original file. In other words, data from the start of the original large file will be located in the chunk with the smallest lexographical suffix. 
 
 ### Step 4
 Tar each of the files produced in the previous step. Note that this will result in `2` "layers of tarring". 
