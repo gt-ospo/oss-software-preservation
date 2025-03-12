@@ -12,3 +12,8 @@
   - [FUSE](https://www.kernel.org/doc/html/next/filesystems/fuse.html) is a kernel API that allows implementing filesystems through a userspace process (i.e. without editing the kernel source or loading a kernel module)
 - GTK
   - Popular GUI toolkit/library for Linux/BSD/etc; does not have mature support for Windows, macOS, Android, iOS
+- NXPK file
+  - VMNetX's file format that contains
+    - manifest files with metadata about the VM image (including a [libvirt domain XML](https://libvirt.org/formatdomain.html) file)
+    - memory image
+    - disk image
