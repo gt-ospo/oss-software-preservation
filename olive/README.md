@@ -15,6 +15,7 @@ Current progress:
 
 TODOs:
 - support NXPK files' memory images
+- support NXPK file support on-the-fly (currently requires conversion step)
 
 ## Comparison to EaaSI
 
@@ -60,7 +61,7 @@ Note: we call our fork of VMNetX Caviar, to distinguish it from the original.
 2. Run Caviar - it will mount a FUSE filesystem
   - make sure `caviar` is executable - `chmod +x caviar`
   - `./caviar -mount /caviar`
-  - Now, files will be accessible under `/caviar` e.g. `/caviar/6b7a1d0cfeaf2d406d05bf174885b8d2edd7866b733a9aaea79fbddf0466741b` for a Debian 12 image
+  - Now, files will be accessible under `/caviar` e.g. `/caviar/6b7a1d0cfeaf2d406d05bf174885b8d2edd7866b733a9aaea79fbddf0466741b` for a Debian 12 image (x86-64)
   - Note: if running many workloads, please run your own mirror by copying the needed files to your own webserver.
   - Note: caviar will not exit - open a new terminal for the following commands
 
