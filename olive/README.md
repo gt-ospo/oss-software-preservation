@@ -58,7 +58,7 @@ Note: we call our fork of VMNetX Caviar, to distinguish it from the original.
   - Click the `build-caviar` artifact to download it
   ![artifact list](../tutorial_images/olive/caviar-artifacts.png)
   - Unzip the file - it should contain an executable `caviar` for your machine
-2. Run Caviar - it will mount a FUSE filesystem
+2. Run Caviar - it will mount a [FUSE](./glossary.md) filesystem
   - make sure `caviar` is executable - `chmod +x caviar`
   - `./caviar -mount /caviar`
   - Now, files will be accessible under `/caviar` e.g. `/caviar/6b7a1d0cfeaf2d406d05bf174885b8d2edd7866b733a9aaea79fbddf0466741b` for a Debian 12 image (x86-64)

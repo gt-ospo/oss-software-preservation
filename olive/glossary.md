@@ -8,8 +8,12 @@
 - VMNetFS (`vmnetfs`)
   - FUSE filesystem used for VMNetX for disk streaming
   - Like OneDrive, files are downloaded on demand; if of a 20GiB disk, only e.g. 3GiB is used for startup, we save 17GiB of network bandwidth
+- Caviar
+  - Our fork (software-presevation team) of VMNetX
+  - https://github.com/gt-ospo/vmnetx.git
 - FUSE
   - [FUSE](https://www.kernel.org/doc/html/next/filesystems/fuse.html) is a kernel API that allows implementing filesystems through a userspace process (i.e. without editing the kernel source or loading a kernel module)
+  - VMNetFS and Caviar uses this to provide on-demand disk streaming for VMs
 - GTK
   - Popular GUI toolkit/library for Linux/BSD/etc; does not have mature support for Windows, macOS, Android, iOS
 - NXPK file
