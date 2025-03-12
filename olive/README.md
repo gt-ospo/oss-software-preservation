@@ -120,13 +120,3 @@ drwxrwxrwt 157 root   root      376832 Mar 11 23:44 ../
 Now, the file size has increased to around 250 MiB.
 This is because we installed a package, which downloaded and installed many files, as well as changed some existing ones.
 Note that this is still smaller than the full size of the image (416 MiB in this case).
-
-
-- what is olive - see glossary.md
-- compare to eaasi
-- quick architecurutal background 
-  - vmnetx
-- how to get started with it
-  - not currently compatable so it needs to be updated (fork)
-- key updates
-- openMPI container tutorial 
