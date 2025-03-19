@@ -1,11 +1,5 @@
 # Olive Executable Archive
 
-- pros
-  - less components/software to maintain than EaaSI
-    - required: a normal web server to host files (e.g. nginx or apache), and VMNetX client software only
-  - OAI-PMH support is probably not that hard to implement
-  - can download portions of the VM on demand
-
 ## Fork
 
 Our fork of [VMNetX](https://github.com/cmusatyalab/vmnetx.git) (called Caviar) is available here: https://github.com/gt-ospo/vmnetx.git
@@ -19,8 +13,7 @@ TODOs:
 
 ## Comparison to EaaSI
 
-| --- 
-| Virtualization Method
+[A full comparision can be found here.](https://github.com/gt-ospo/oss-software-preservation/blob/main/other-platforms/eaasi_olive_comparison.md)
 
 ## Olive/VMNetX Architecture
 
