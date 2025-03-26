@@ -62,15 +62,15 @@ Note: In order to distinguish our fork, we have renamed VMNetX to Caviar.
   - [Watch Step](https://youtu.be/uRjmTm59spk&t=98) Ensure that the new `/caviar` directory has both read and write permissions by running `sudo chmod ugo+rwX /caviar`
 3. In this step, we will Run Caviar - it will mount a [FUSE](./glossary.md) filesystem
   - `cd` to the directory containing your unzipped `caviar` download from step 2. 
-  - (1:52:34) Run the binary with `./caviar -mount /caviar`. This will mount the Caviar virtual filesystem to `/caviar`; this command should keep running in the terminal. 
+  - [Watch Step](https://youtu.be/uRjmTm59spk&t=112) Run the binary with `./caviar -mount /caviar`. This will mount the Caviar virtual filesystem to `/caviar`; this command should keep running in the terminal. 
   - Now, remote disk images will be accessible in your local `/caviar` directory. 
     - The remote disk images are currently hosted at https://bulletin.nyiyui.ca/2025/03/caviar-store/
 
 
 Our setup is done - now we can make a new VM and run it. In this tutorial we will be making a Debian 12 virtual machine.
 
-1. (2:12:16) Create a directory for your VM files - `mkdir run-debian-12 && cd run-debian-12`
-2. (2:30:57) Create your VM image - `qemu-img create -f qcow2 -F qcow2 -b /caviar/6b7a1d0cfeaf2d406d05bf174885b8d2edd7866b733a9aaea79fbddf0466741b debian-12.qcow2`
+1. [Watch Step](https://youtu.be/uRjmTm59spk&t=132) Create a directory for your VM files - `mkdir run-debian-12 && cd run-debian-12`
+2. [Watch Step](https://youtu.be/uRjmTm59spk&t=150) Create your VM image - `qemu-img create -f qcow2 -F qcow2 -b /caviar/6b7a1d0cfeaf2d406d05bf174885b8d2edd7866b733a9aaea79fbddf0466741b debian-12.qcow2`
   - Explanation of argument options
     - `qemu-img create` QEMU's utility program for making VM images
     - `-f qcow2 -F qcow2` specify we are using [QCOW2 format](https://www.linux-kvm.org/page/Qcow2) for our VM images - this is required by Caviar
@@ -90,7 +90,7 @@ drwxrwxrwt 157 root   root    376832 Mar 11 23:38 ../
 
 Now, we can run it:
 
-3. (2:38:00) qemu-kvm -m 4096 debian-12.qcow2
+3. [Watch Step](https://youtu.be/uRjmTm59spk&t=158) qemu-kvm -m 4096 debian-12.qcow2
 This runs the VM with 4 GiB of RAM. The VM will run while only part of the full image is downloaded
 
 In another terminal, we can check the file size again:
