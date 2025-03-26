@@ -52,26 +52,25 @@ References:
 Note: In order to distinguish our fork, we have renamed VMNetX to Caviar.
 
 1. The first step is to download Caviar. 
-  - (10:00) Go to https://github.com/gt-ospo/vmnetx/actions/workflows/go.yml 
-  - (22:04) Click the first green checkmark link ![View of GitHub Actions workflow runs - click the first one](../tutorial_images/olive/caviar-workflows.png) 
-  - (25:40) Click the `build-caviar` artifact to download it
-  ![artifact list](../tutorial_images/olive/caviar-artifacts.png)
+  - (05:00) Go to https://github.com/gt-ospo/vmnetx/actions/workflows/go.yml 
+  - (19:11) Click the first green checkmark link
+  - (24:41) Click the `build-caviar` artifact to download it
 2. Next, preform the following setup:
-  - Unzip the downloaded file (`build-caviar.zip`) - it should contain an executable called `caviar` for your machine. 
-  - Ensure that the `caviar` binary you downloaded from the previous step is executable with the `chmod +x caviar` command. 
-  - Make a `/caviar` directory with `mkdir /caviar` 
-  - Ensure that the new `/caviar` directory has both read and write permissions by running `chmod ugo+rwX /caviar`
+  - (38:12) Unzip the downloaded file (`build-caviar.zip`) - it should contain an executable called `caviar` for your machine. 
+  - (1:07:38) Ensure that the `caviar` binary you downloaded from the previous step is executable with the `chmod +x caviar` command. 
+  - (1:25:37) Make a `/caviar` directory with `sudo mkdir /caviar` 
+  - (1:38:53) Ensure that the new `/caviar` directory has both read and write permissions by running `sudo chmod ugo+rwX /caviar`
 3. In this step, we will Run Caviar - it will mount a [FUSE](./glossary.md) filesystem
   - `cd` to the directory containing your unzipped `caviar` download from step 2. 
-  - Run the binary with `./caviar -mount /caviar`. This will mount the Caviar virtual filesystem to `/caviar`; this command should keep running in the terminal. 
+  - (1:52:34) Run the binary with `./caviar -mount /caviar`. This will mount the Caviar virtual filesystem to `/caviar`; this command should keep running in the terminal. 
   - Now, remote disk images will be accessible in your local `/caviar` directory. 
     - The remote disk images are currently hosted at https://bulletin.nyiyui.ca/2025/03/caviar-store/
 
 
 Our setup is done - now we can make a new VM and run it. In this tutorial we will be making a Debian 12 virtual machine.
 
-1. Create a directory for your VM files - `mkdir run-debian-12 && cd run-debian-12`
-2. Create your VM image - `qemu-img create -f qcow2 -F qcow2 -b /caviar/6b7a1d0cfeaf2d406d05bf174885b8d2edd7866b733a9aaea79fbddf0466741b debian-12.qcow2`
+1. (2:12:16) Create a directory for your VM files - `mkdir run-debian-12 && cd run-debian-12`
+2. (2:30:57) Create your VM image - `qemu-img create -f qcow2 -F qcow2 -b /caviar/6b7a1d0cfeaf2d406d05bf174885b8d2edd7866b733a9aaea79fbddf0466741b debian-12.qcow2`
   - Explanation of argument options
     - `qemu-img create` QEMU's utility program for making VM images
     - `-f qcow2 -F qcow2` specify we are using [QCOW2 format](https://www.linux-kvm.org/page/Qcow2) for our VM images - this is required by Caviar
@@ -92,7 +91,7 @@ drwxrwxrwt 157 root   root    376832 Mar 11 23:38 ../
 Now, we can run it:
 
 ```
-qemu-kvm -m 4096 debian-12.qcow2
+(2:38:00) qemu-kvm -m 4096 debian-12.qcow2
 # this runs the VM with 4 GiB of RAM
 # the VM will run while only part of the full image is downloaded
 ```
