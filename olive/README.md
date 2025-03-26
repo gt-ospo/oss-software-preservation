@@ -1,25 +1,13 @@
 # Olive Executable Archive
 
-## Fork
-
-Our fork of [VMNetX](https://github.com/cmusatyalab/vmnetx.git) (called Caviar) is available here: https://github.com/gt-ospo/vmnetx.git
-
-Current progress:
-- can reproduce / run (the original) VMNetX's NXPK files (with caveats, see TODOs section below)
-
-TODOs:
-- support NXPK files' memory images
-- support NXPK file support on-the-fly (currently requires conversion step)
-
 ## Comparison to EaaSI
 
 [A full comparision can be found here.](https://github.com/gt-ospo/oss-software-preservation/blob/main/other-platforms/eaasi_olive_comparison.md)
 
 ## Olive/VMNetX Architecture
 
-To reiterate:
-- Olive is a website with a collection of VM images (e.g. Windows 95),
-- while VMNetX is the client software that runs the VMs.
+- Olive is a website with a collection of VM images (e.g. Windows 95)
+- VMNetX is the client software that runs the VMs.
 - Guest OS is the operating system running inside a virtual machine
 - Host OS is the operating system running the virtual machine
 
@@ -41,7 +29,17 @@ The below image provides a visual organization of the above.
 References:
 - http://reports-archive.adm.cs.cmu.edu/anon/2015/abstracts/15-115.html
 
-## System Requirements
+## Fork
+Because the [VMNetX](https://github.com/cmusatyalab/vmnetx.git) client is no longer maintained, we have created our own fork of it. This fork is called Caviar. Our fork is available here: https://github.com/gt-ospo/vmnetx.git
+
+Current progress:
+- can reproduce / run (the original) VMNetX's NXPK files (with caveats, see TODOs section below)
+
+TODOs:
+- support NXPK files' memory images
+- support NXPK file support on-the-fly (currently requires conversion step)
+
+## Tutorial: System Requirements For Caviar
 - Linux based host OS (within past 5 years)
   - A good choice/example is Ubuntu 24.04.
 - QEMU (KVM is more performant, but `qemu-system-x86_64` is ok as well)
