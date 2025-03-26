@@ -90,14 +90,8 @@ drwxrwxrwt 157 root   root    376832 Mar 11 23:38 ../
 
 Now, we can run it:
 
-```
-(2:38:00) qemu-kvm -m 4096 debian-12.qcow2
-# this runs the VM with 4 GiB of RAM
-# the VM will run while only part of the full image is downloaded
-```
-
-![VM boot image](../tutorial_images/olive/caviar-debian12-grub.png)
-![VM boot image](../tutorial_images/olive/caviar-debian12-home.png)
+3. (2:38:00) qemu-kvm -m 4096 debian-12.qcow2
+This runs the VM with 4 GiB of RAM. The VM will run while only part of the full image is downloaded
 
 In another terminal, we can check the file size again:
 
@@ -113,7 +107,6 @@ We can see that each boot created some log files and other files, that amount to
 This new data is stored in the `debian-12.qcow2` file, and does not affect the original image at `/caivar/6b7a1d0cfeaf2d406d05bf174885b8d2edd7866b733a9aaea79fbddf0466741b`.
 
 Let's try installing a package, and checking the file size again:
-![screenshot of a terminal, running apt-get commands in a VM](../tutorial_images/olive/caviar-debian12-install.png)
 
 `ls -al debian-12.qcow2`
 ```
