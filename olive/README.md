@@ -56,10 +56,10 @@ Note: In order to distinguish our fork, we have renamed VMNetX to Caviar.
   - [Watch Step](https://youtu.be/uRjmTm59spk&t=19) Click the first green checkmark link
   - [Watch Step](https://youtu.be/uRjmTm59spk&t=24) Click the `build-caviar` artifact to download it
 2. Next, preform the following setup:
-  - (38:12) Unzip the downloaded file (`build-caviar.zip`) - it should contain an executable called `caviar` for your machine. 
-  - (1:07:38) Ensure that the `caviar` binary you downloaded from the previous step is executable with the `chmod +x caviar` command. 
-  - (1:25:37) Make a `/caviar` directory with `sudo mkdir /caviar` 
-  - (1:38:53) Ensure that the new `/caviar` directory has both read and write permissions by running `sudo chmod ugo+rwX /caviar`
+  - [Watch Step](https://youtu.be/uRjmTm59spk&t=38) Unzip the downloaded file (`build-caviar.zip`) - it should contain an executable called `caviar` for your machine. 
+  - [Watch Step](https://youtu.be/uRjmTm59spk&t=67) Ensure that the `caviar` binary you downloaded from the previous step is executable with the `chmod +x caviar` command. 
+  - [Watch Step](https://youtu.be/uRjmTm59spk&t=85) Make a `/caviar` directory with `sudo mkdir /caviar` 
+  - [Watch Step](https://youtu.be/uRjmTm59spk&t=98) Ensure that the new `/caviar` directory has both read and write permissions by running `sudo chmod ugo+rwX /caviar`
 3. In this step, we will Run Caviar - it will mount a [FUSE](./glossary.md) filesystem
   - `cd` to the directory containing your unzipped `caviar` download from step 2. 
   - (1:52:34) Run the binary with `./caviar -mount /caviar`. This will mount the Caviar virtual filesystem to `/caviar`; this command should keep running in the terminal. 
