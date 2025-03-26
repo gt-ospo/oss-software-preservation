@@ -52,9 +52,9 @@ References:
 Note: In order to distinguish our fork, we have renamed VMNetX to Caviar.
 
 1. The first step is to download Caviar. 
-  - (05:00) Go to https://github.com/gt-ospo/vmnetx/actions/workflows/go.yml 
-  - (19:11) Click the first green checkmark link
-  - (24:41) Click the `build-caviar` artifact to download it
+  - [Watch Step](https://youtu.be/uRjmTm59spk&t=5) Go to https://github.com/gt-ospo/vmnetx/actions/workflows/go.yml 
+  - [Watch Step](https://youtu.be/uRjmTm59spk&t=19) Click the first green checkmark link
+  - [Watch Step](https://youtu.be/uRjmTm59spk&t=24) Click the `build-caviar` artifact to download it
 2. Next, preform the following setup:
   - (38:12) Unzip the downloaded file (`build-caviar.zip`) - it should contain an executable called `caviar` for your machine. 
   - (1:07:38) Ensure that the `caviar` binary you downloaded from the previous step is executable with the `chmod +x caviar` command. 
