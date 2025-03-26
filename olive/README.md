@@ -78,44 +78,7 @@ Our setup is done - now we can make a new VM and run it. In this tutorial we wil
       - `/caviar/...` is the remote VM image we mounted in our setup step 3 - the file does not actually exist on your disk, but is read on-demand as necessary
     - `debian-12.qcow2` the filename of our new VM image
 
-We have created a new VM image based on Debian 12. Let's check the file size:
-
-`ls -al debian-12.qcow2`
-```
-total 10116
-drwx------   2 nyiyui nyiyui    4096 Mar 11 23:41 ./
-drwxrwxrwt 157 root   root    376832 Mar 11 23:38 ../
--rw-r--r--   1 nyiyui nyiyui  196656 Mar 11 23:39 debian-12.qcow2
-```
-
-Now, we can run it:
+We have created a new VM image based on Debian 12. Let's check the file size. Now, we can run it:
 
 3. [Watch Step](https://youtu.be/uRjmTm59spk&t=158) qemu-kvm -m 4096 debian-12.qcow2
-This runs the VM with 4 GiB of RAM. The VM will run while only part of the full image is downloaded
-
-In another terminal, we can check the file size again:
-
-`ls -al debian-12.qcow2`
-```
-total 9920
-drwx------   2 nyiyui nyiyui    4096 Mar 11 23:43 ./
-drwxrwxrwt 157 root   root    376832 Mar 11 23:38 ../
--rw-r--r--   1 nyiyui nyiyui 9830400 Mar 11 23:43 debian-12.qcow2
-```
-
-We can see that each boot created some log files and other files, that amount to around 10 MiB of new data.
-This new data is stored in the `debian-12.qcow2` file, and does not affect the original image at `/caivar/6b7a1d0cfeaf2d406d05bf174885b8d2edd7866b733a9aaea79fbddf0466741b`.
-
-Let's try installing a package, and checking the file size again:
-
-`ls -al debian-12.qcow2`
-```
-total 250304
-drwx------   2 nyiyui nyiyui      4096 Mar 11 23:43 ./
-drwxrwxrwt 157 root   root      376832 Mar 11 23:44 ../
--rw-r--r--   1 nyiyui nyiyui 255983616 Mar 11 23:45 debian-12.qcow2
-```
-
-Now, the file size has increased to around 250 MiB.
-This is because we installed a package, which downloaded and installed many files, as well as changed some existing ones.
-Note that this is still smaller than the full size of the image (416 MiB in this case).
+This runs the VM with 4 GiB of RAM. The VM will run while only part of the full image is downloaded.
