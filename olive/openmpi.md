@@ -5,9 +5,11 @@
 In this tutorial, we will archive software that uses OpenMPI.
 We will use an image with OpenMPI and a compiler suite preinstalled, and then use it to compile and run a simple OpenMPI program.
 
-## Requirements
+## Prerequisites
 
-This tutorial assumes that the user has a working installation of caviar ready. If this is not the case, follow [this](https://github.com/gt-ospo/oss-software-preservation/blob/main/olive/README.md) tutorial to learn how to mount the remote file directory. 
+- Linux shell environment with QEMU emulator
+- `caviar` and `caviar-convert`, `caviar-vmnetx` installed
+  - This tutorial assumes that the user has a working installation of caviar ready. If this is not the case, follow [this](https://github.com/gt-ospo/oss-software-preservation/blob/main/olive/README.md) tutorial to learn how to mount the remote file directory. 
 
 ## Setup our system
 
@@ -29,6 +31,7 @@ Now, run the image with the following command:
 ```bash
 qemu-kvm -m 4096 -smp 4 -netdev user,id=net0,hostfwd=tcp::8022-:22 -device virtio-net-pci,netdev=net0 debian-12-openmpi.qcow2
 ```
+- `qemu-kvm` is the command to run the VM. (Use `qemu-system-x86_64` if `qemu-kvm` is not available on your system.)
 - `-m 4096` specifies that the VM should have 4 GiB of RAM. Use more RAM if necessary and available.
 - `-smp 4` specifies that the VM should have 4 virtual CPUs. Use more CPUs if necessary and available.
 - `-netdev user,id=net0,hostfwd=tcp::8022-:22 -device virtio-net-pci,netdev=net0` sets up a network connection between the VM and the host. This allows us to SSH into the VM.
