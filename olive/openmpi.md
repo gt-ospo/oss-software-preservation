@@ -5,6 +5,10 @@
 In this tutorial, we will archive software that uses OpenMPI.
 We will use an image with OpenMPI and a compiler suite preinstalled, and then use it to compile and run a simple OpenMPI program.
 
+## Requirements
+
+This tutorial assumes that the user has a working installation of caviar ready. If this is not the case, follow [this](https://github.com/gt-ospo/oss-software-preservation/blob/main/olive/README.md) tutorial to learn how to mount the remote file directory. 
+
 ## Setup our system
 
 We will be using a Debian 12 image with OpenMPI, a compiler suite, and a SSH server preinstalled.
