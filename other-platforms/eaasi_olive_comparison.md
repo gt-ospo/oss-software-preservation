@@ -1,5 +1,14 @@
 # Comparison of EaaSI and Olive Archive 
 
+This comparison provides an overview of the EaaSI (Emulation-as-a-Service Infrastructure) platform developed by Yale University and the Olive Archive project at Carnegie Mellon University.
+
+Both platforms are designed to preserve and provide access to legacy software and environments, but differ in architecture and implementation.
+EaaSI is a client-server web architecture which requires a dedicated set of custom servers.
+On the other hand, Olive Archive mainly does emulation on the client side (i.e. on laptops or desktops) and uses a standard web server to serve VM images.
+Therefore, Olive Archive can be seen as a more lightweight solution that requires less costs and maintenance.
+
+Additionally, EaaSI supports multiple emulators (e.g. QEMU for normal desktop computing, SheepShaver for Mac OS), while Olive Archive focuses on KVM/QEMU for virtualization.
+
 | **Dimension**                | **EaaSI (Yale University)** | **Olive Archive (CMU)** |
 |------------------------------|----------------------------|-------------------------|
 | **Architecture**             | Emulation-as-a-Service (EaaS) framework with Yale. EaaSI deploys a client–server web architecture, integrating multiple emulator engines. It has a web client for interacting with emulated environments. | Uses a hybrid client–server architecture using virtual machines. Legacy software (and its OS) is encapsulated in a full VM image, delivered from a standard web server and executed via the VMNetX client using KVM/QEMU. A click on the web portal launches the VM on an “edge” node (user’s machine or nearby server), with the VM state demand-paged over HTTP for efficiency. |
