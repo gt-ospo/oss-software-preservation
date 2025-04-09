@@ -18,9 +18,9 @@ We will use an image with OpenMPI and a compiler suite preinstalled, and then us
 - The user is `pwischangeme` and the password for both the user and root is `changeme`. (You do not, in fact, have to change the password :D - this VM isn't meant to be secure.)
 
 ## Launching the VM 
-
-1. Make a new image with the following command: `qemu-img create -f qcow2 -F qcow2 -b /caviar/21491a518580df55daa3a2de01d2374d4ecb67b39e605ff90be051d3304d0926 debian-12-openmpi.qcow2`
-2. Now, run the image with the following command:
+1. Mount the caviar remote directory to your machine. If you do not know how to do this, follow this tutorial. 
+2. Make a new image with the following command: `qemu-img create -f qcow2 -F qcow2 -b /caviar/21491a518580df55daa3a2de01d2374d4ecb67b39e605ff90be051d3304d0926 debian-12-openmpi.qcow2`
+3. Now, run the image with the following command:
 ```qemu-kvm -m 4096 -smp 4 -netdev user,id=net0,hostfwd=tcp::8022-:22 -device virtio-net-pci,netdev=net0 debian-12-openmpi.qcow2```
 
 Argument breakdown: 
