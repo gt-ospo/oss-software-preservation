@@ -37,6 +37,8 @@ I want to...
   - [Archive Software that uses OpenMPI](./openmpi.md)
 - Convert NXPK files (from Olive Executable Archive) to work on Caviar
   - [Import Olive Executable Archive VMs (NXPK files) to Caviar](./import-nxpk.md)
+- [Disable Autoupgrade on an OS](./disable-autoupgrade.md)  
+  How to disable autoupgrade on a VM OS (e.g., Ubuntu 12.04) to prevent unwanted updates.
 
 ## Tutorial: System Requirements For Caviar
 - Linux based host OS (within past 5 years)
