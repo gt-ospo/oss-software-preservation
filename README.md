@@ -38,7 +38,7 @@ Olive (developed by Carnegie Mellon) focuses on preserving software by deliverin
   - [Import and run NXPK files](./olive/import-nxpk.md)
   - [Run OpenMPI on Olive](./olive/openmpi.md)
 
-### 🛠Other Platforms
+### Other Platforms
 - [KEEP Emulation Framework](./other-platforms/KEEP.md)
 - [Dioscuri](./other-platforms/Dioscuri.md)
 - [Emularity (used by Internet Archive)](./other-platforms/Emularity.md)
