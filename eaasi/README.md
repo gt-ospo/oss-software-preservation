@@ -6,7 +6,7 @@ This folder contains documentation and tutorials for using **EaaSI** (Emulation-
 
 ## Overview
 
-EaaSI integrates emulators like QEMU and SheepShaver into a client-server web framework. It allows for the preservation and re-use of legacy operating systems and applications by packaging them into shareable environments.
+EaaSI integrates emulators like QEMU into a client-server web framework. It allows for the preservation and re-use of legacy operating systems and applications by packaging them into shareable environments.
 
 ---
 
