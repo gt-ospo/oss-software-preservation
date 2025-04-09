@@ -14,7 +14,7 @@ Olive allows users to run preserved applications—such as historical software, 
 
 The VMNetX (and Caviar) clients mount a FUSE-based filesystem that fetches needed parts of the disk image on-demand. This makes it possible to boot and run legacy operating systems efficiently without downloading full VM images up front.
 
-![Architecture](../tutorial_images/olive/architecture.png)
+<img src="../tutorial_images/olive/architecture.png" alt="VMNetX architecture" width="300"/>
 
 ## Caviar: Modern VMNetX Fork
 
