@@ -1,51 +1,12 @@
-# Olive Executable Archive
+# Caviar Installation Tutorial
 
-## Comparison to EaaSI
-
-[A full comparision can be found here.](https://github.com/gt-ospo/oss-software-preservation/blob/main/other-platforms/eaasi_olive_comparison.md)
-
-## Olive/VMNetX Architecture
-
-- Olive is a website with a collection of VM images (e.g. Windows 95)
-- VMNetX is the client software that runs the VMs.
-- Guest OS is the operating system running inside a virtual machine
-- Host OS is the operating system running the virtual machine
-
-The main architecture is as follows:
-- KVM/QEMU runs the guest OS
-  - Note that KVM/QEMU is just a standard virtual machine
-- VMNetX provides access to the guest OS disk
-  - In a non-VMNetX setting, this would usually be provided by a VM image (e.g. `.vmdk` or `.qcow2` file), which contains the disk of the guest OS
-  - VMNetX downloads required parts of the OS image on-demand (just like how a YouTube video is streamed on-demand)
-  - VMNetX can also set an initial memory image
-    - We do not have to wait for the OS to boot up
-    - We can document a VM along with its memory, making sure we store all necessary state for reproduction
-- A standard web server provides the enttire guest OS disk
-
-The below image provides a visual organization of the above.
-
-![The VMNetX client provides a cache layer between an unmodified web server and the KVM/QEMU ](../tutorial_images/olive/architecture.png)
-
-References:
-- http://reports-archive.adm.cs.cmu.edu/anon/2015/abstracts/15-115.html
-
-## Fork
-Because the [VMNetX](https://github.com/cmusatyalab/vmnetx.git) client is no longer maintained, we have created our own fork of it. This fork is called Caviar. Our fork is available here: https://github.com/gt-ospo/vmnetx.git
-
-Current progress:
-- can reproduce / run (the original) VMNetX's NXPK files (with caveats, see TODOs section below)
-
-TODOs:
-- support NXPK files' memory images
-- support NXPK file support on-the-fly (currently requires conversion step)
-
-## Tutorial: System Requirements For Caviar
+## System Requirements For Caviar
 - Linux based host OS (within past 5 years)
   - A good choice/example is Ubuntu 24.04.
 - QEMU (KVM is more performant, but `qemu-system-x86_64` is ok as well)
   - [QEMU's download webpage](https://www.qemu.org/download/)
 
-## Tutorial: Run and Explore Debian 12 using Caviar
+## Run and Explore Debian 12 using Caviar
 
 Note: In order to distinguish our fork, we have renamed VMNetX to Caviar.
 
