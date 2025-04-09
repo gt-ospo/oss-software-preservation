@@ -1,4 +1,4 @@
-# Caviar Installation Tutorial
+# Caviar Installation & Devian Virtual Machine Tutorial 
 
 ## System Requirements For Caviar
 - Linux based host OS (within past 5 years)
@@ -6,7 +6,7 @@
 - QEMU (KVM is more performant, but `qemu-system-x86_64` is ok as well)
   - [QEMU's download webpage](https://www.qemu.org/download/)
 
-## Run and Explore Debian 12 using Caviar
+## Install Caviar
 
 Note: In order to distinguish our fork, we have renamed VMNetX to Caviar.
 
@@ -25,7 +25,7 @@ Note: In order to distinguish our fork, we have renamed VMNetX to Caviar.
   - Now, remote disk images will be accessible in your local `/caviar` directory. 
     - The remote disk images are currently hosted at https://bulletin.nyiyui.ca/2025/03/caviar-store/
 
-
+## Run and Explore Debian 12
 Our setup is done - now we can make a new VM and run it. In this tutorial we will be making a Debian 12 virtual machine.
 
 1. [Watch Step](https://youtu.be/uRjmTm59spk&t=132) Create a directory for your VM files - `mkdir run-debian-12 && cd run-debian-12`
