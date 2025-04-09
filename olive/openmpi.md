@@ -11,26 +11,19 @@ We will use an image with OpenMPI and a compiler suite preinstalled, and then us
 - `caviar` and `caviar-convert`, `caviar-vmnetx` installed
   - This tutorial assumes that the user has a working installation of caviar ready. If this is not the case, follow [this](https://github.com/gt-ospo/oss-software-preservation/blob/main/olive/README.md) tutorial to learn how to mount the remote file directory. 
 
-## Setup our system
+## Background
 
-We will be using a Debian 12 image with OpenMPI, a compiler suite, and a SSH server preinstalled.
+- We will be using a Debian 12 image with OpenMPI, a compiler suite, and a SSH server preinstalled.
+- The path to the image being used is `/caviar/21491a518580df55daa3a2de01d2374d4ecb67b39e605ff90be051d3304d0926`.
+- The user is `pwischangeme` and the password for both the user and root is `changeme`. (You do not, in fact, have to change the password :D - this VM isn't meant to be secure.)
 
-The path is `/caviar/21491a518580df55daa3a2de01d2374d4ecb67b39e605ff90be051d3304d0926`.
+## Launching the VM 
 
-The user is `pwischangeme` and the password for both the user and root is `changeme`.
-(You do not, in fact, have to change the password :D - this VM isn't meant to be secure.)
+1. Make a new image with the following command: `qemu-img create -f qcow2 -F qcow2 -b /caviar/21491a518580df55daa3a2de01d2374d4ecb67b39e605ff90be051d3304d0926 debian-12-openmpi.qcow2`
+2. Now, run the image with the following command:
+```qemu-kvm -m 4096 -smp 4 -netdev user,id=net0,hostfwd=tcp::8022-:22 -device virtio-net-pci,netdev=net0 debian-12-openmpi.qcow2```
 
-Make a new image with the following command:
-
-```bash
-qemu-img create -f qcow2 -F qcow2 -b /caviar/21491a518580df55daa3a2de01d2374d4ecb67b39e605ff90be051d3304d0926 debian-12-openmpi.qcow2
-```
-
-Now, run the image with the following command:
-
-```bash
-qemu-kvm -m 4096 -smp 4 -netdev user,id=net0,hostfwd=tcp::8022-:22 -device virtio-net-pci,netdev=net0 debian-12-openmpi.qcow2
-```
+Argument breakdown: 
 - `qemu-kvm` is the command to run the VM. (Use `qemu-system-x86_64` if `qemu-kvm` is not available on your system.)
 - `-m 4096` specifies that the VM should have 4 GiB of RAM. Use more RAM if necessary and available.
 - `-smp 4` specifies that the VM should have 4 virtual CPUs. Use more CPUs if necessary and available.
