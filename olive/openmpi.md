@@ -34,7 +34,7 @@ Argument breakdown:
 ## Compile and run a simple OpenMPI program
 
 4. Once the virtual machine is running, verify you can SSH into it by running the following command in the terminal: `ssh -p 8022 pwischangeme@localhost`.
-5. In this tutorial, we will use an openMPI test file called `ringshift.c` which can be found here. Copy over the `ringshift.c` source files from your computer to the VM with the following command: `scp -P 8022 -r /path/to/mpi-ringshift pwischangeme@localhost:/home/pwischangeme`
+5. In this tutorial, we will use an openMPI test file called `ringshift.c` which can be found here. Copy over the `ringshift.c` source files from your computer to the VM by running the following command in your computer (not the VM): `scp -P 8022 -r /path/to/mpi-ringshift pwischangeme@localhost:/home/pwischangeme`
 6. Now, SSH into the VM and compile the program:
 ```bash
 cd mpi-ringshift
