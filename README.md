@@ -1,6 +1,6 @@
 # OSS Software Preservation
 
-This repository documents various platforms and strategies for preserving legacy software. As software ages, the systems required to run it often become obsolete. Software preservation ensures that important digital artifacts—such as scientific tools, historical applications, vintage games, and cultural content—remain accessible in the future.
+This repository documents various platforms and strategies for preserving legacy software. As software ages, the systems required to run it often become obsolete. Software preservation ensures that important digital artifacts such as scientific tools, historical applications, vintage games, and cultural content, remain accessible in the future.
 
 This work explores a range of open-source tools and systems that support software emulation, virtualization, and reproducibility. It compares their architectures, features, and use cases, and provides hands-on guides for setup and usage.
 
