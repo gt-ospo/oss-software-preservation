@@ -9,7 +9,7 @@ We will use an image with OpenMPI and a compiler suite preinstalled, and then us
 
 - Linux shell environment with QEMU emulator
 - `caviar` and `caviar-convert`, `caviar-vmnetx` installed
-  - This tutorial assumes that the user has a working installation of caviar ready. If this is not the case, follow [this](https://github.com/gt-ospo/oss-software-preservation/blob/main/olive/README.md) tutorial to learn how to mount the remote file directory. 
+  - This tutorial assumes that the user has a working installation of caviar ready. If this is not the case, follow [this](https://github.com/gt-ospo/oss-software-preservation/blob/main/olive/caviar-installation.md) tutorial to learn how to mount the remote file directory. 
 
 ## Background
 
