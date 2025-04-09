@@ -13,7 +13,7 @@ There are three main steps:
 
 - Linux shell environment with QEMU emulator
 - `caviar` and `caviar-convert`, `caviar-vmnetx` installed
-  - To install these programs, follow step 1 of the [Run and Explore Debian 12 using Caviar](./README.md) tutorial
+  - To install these programs, follow step 1 of the [Run and Explore Debian 12 using Caviar](./caviar-installation.md) tutorial
 - NXPK file to import
 - webserver to host the converted files
   - any mainstream webserver that can host files (e.g. Apache, nginx, caddy) will work (must support HTTP Range requests)
