@@ -36,15 +36,15 @@ Argument breakdown:
 4. Once the virtual machine is running, verify you can SSH into it by running the following command in the terminal: `ssh -p 8022 pwischangeme@localhost`.
 5. [Watch Step](https://www.youtube.com/watch?v=Dy209cgrlfQ&ab_channel=SaadAta&t=214) In this tutorial, we will use an openMPI test file called `ringshift.c` which can be found [here](./mpi-ringshift/ringshift.c). Copy over the `ringshift.c` source files from your computer to the VM by running the following command in your computer (not the VM): `scp -P 8022 -r /path/to/mpi-ringshift pwischangeme@localhost:/home/pwischangeme`
 6. [Watch Step](https://www.youtube.com/watch?v=Dy209cgrlfQ&ab_channel=SaadAta&t=239) Now, SSH into the VM and compile the program:
+
 ```bash
-cd mpi-ringshift
 mpicc -o ringshift ringshift.c
 mpirun -n 4 ./ringshift
 ```
 
 You should see something like the following output:
 ```
-pwischangeme@debian:~/mpi-ringshift$ mpirun -n 8 ringshift
+pwischangeme@debian:~$ mpirun -n 8 ringshift
 N = 8
 --------------------------------------- Message Size: 2 bytes, Time: 6.668720e-06 s ---------------------------------------
 Message Size: 2 bytes, Time: 6.668720e-06 s

@@ -30,8 +30,19 @@ To get started with Caviar, see the tutorials below.
 
 ## Tutorials
 
+I want to...
 - [Install and run Caviar](./caviar-installation.md)  
   How to install the Caviar binary and mount remote VM files using FUSE.
+- Archive (relatively new) software that uses OpenMPI
+  - [Archive Software that uses OpenMPI](./openmpi.md)
+- Convert NXPK files (from Olive Executable Archive) to work on Caviar
+  - [Import Olive Executable Archive VMs (NXPK files) to Caviar](./import-nxpk.md)
+
+## Tutorial: System Requirements For Caviar
+- Linux based host OS (within past 5 years)
+  - A good choice/example is Ubuntu 24.04.
+- QEMU (KVM is more performant, but `qemu-system-x86_64` is ok as well)
+  - [QEMU's download webpage](https://www.qemu.org/download/)
 
 - [Import Olive NXPK files](./import-nxpk.md)  
   How to extract and convert Olive `.nxpk` packages and run them using Caviar.
