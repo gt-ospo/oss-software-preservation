@@ -18,6 +18,8 @@ Therefore, the following guidelines stipulate the version of the software that s
   - Pay attention to which version of the software was used to create the file. Many pieces of software do not have backwards compatibility with all files.
   - If this is the case, try the latest patch version of the software that was used to create the files of interest (e.g. files were created with version 1.2.1, so try 1.2.5).
 
+TODO: add specific guidance on saving Python packages
+
 ## Resources
 
 - Misc. Resources
