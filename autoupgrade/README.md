@@ -17,3 +17,5 @@ Example scenario:
   - Disable GUI prompts for updates
 - [Docker](./docker.md)
   - Prevent Docker images from being downloaded from the Internet
+
+TODO: mark certain packages to not upgrade
