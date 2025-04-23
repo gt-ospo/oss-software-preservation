@@ -20,9 +20,7 @@ There are three main steps:
 
 ## Steps
 
-### 1. Convert the NXPK file to a Caviar-compatible format
-
-We will store the output files in a temporary directory, made using `mktemp --directory`.
+1. Convert the NXPK file to a Caviar-compatible format. We will store the output files in a temporary directory, made using `mktemp --directory`.
 
 `caviar-convert -nxpk <nxpk-file> -out $(mktemp --directory)`
 
@@ -38,18 +36,14 @@ Example using [Ubuntu 12.04](https://bulletin.nyiyui.ca/2025/03/ubuntu12.04.nxpk
 2025/03/19 01:22:41 2. Run using caviar-vmnetx to run the VM: caviar-vmnetx --package /caviar/c56617b6819182c4f1320e2d2a14b9cc7c172702d13dc5f019bfa0c6adb99adf
 ```
 
-### 2. Upload the converted files to a webserver
-
-Upload the contents of the temporary directory to the webserver.
+2. Upload the converted files to a webserver. If you do not have a webserver setup, you can follow [./webserver.md](this) tutorial. 
 
 Example:
 `scp -r /tmp/tmp.swHtNei2oI/* user@webserver:/path/to/webserver`
 
-### 3. Run the VM
+3. In this step, we will run the VM. Make sure `caviar` is running with `--urls` including the webserver you uploaded the files to. 
 
-Make sure `caviar` is running with `--urls` including the webserver you uploaded the files to.
-
-Run `stat /caviar/<package-file>` to make sure the file you uploaded exists.
+First, run `stat /caviar/<package-file>` to make sure the file you uploaded exists.
 
 Example:
 `stat /caviar/c56617b6819182c4f1320e2d2a14b9cc7c172702d13dc5f019bfa0c6adb99adf`
@@ -64,7 +58,7 @@ Change: 1969-12-31 19:00:00.000000000 -0500
  Birth: -
 ```
 
-Run the VM using `caviar-vmnetx`: `caviar-vmnetx --package /caviar/<package-file>`
+Next, run the VM using `caviar-vmnetx`: `caviar-vmnetx --package /caviar/<package-file>`
 
 Example:
 `caviar-vmnetx --package /caviar/c56617b6819182c4f1320e2d2a14b9cc7c172702d13dc5f019bfa0c6adb99adf`
