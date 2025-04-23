@@ -35,14 +35,14 @@ For example, Georgia Tech staff and students can use their own PC as a webserver
 For simplicity, we will be using the [Caddy](https://caddyserver.com/) webserver software. Caddy is a modern webserver that is easy to set up and use. The following tutorial is written for Debian. However, this workflow can easily be adjusted for other operating systems (such as MacOS). 
 
 1. [Watch Step (MacOS)](https://www.youtube.com/watch?v=HsY76oRNH1E&ab_channel=SaadAta&t=11) We will setup the webserver to serve files from a directory on the server. Install Caddy with teh following command: `sudo apt install caddy`
-2. Write the following code in the `/etc/caddy/Caddyfile` file. Replace `https://example.com` with your public IP address (or a domain name that you own)
+2. [Watch Step (MacOS)](https://www.youtube.com/watch?v=HsY76oRNH1E&ab_channel=SaadAta&t=52) Write the following code in the `/etc/caddy/Caddyfile` file. Replace `https://example.com` with your public IP address (or a domain name that you own)
 ```caddy
 https://example.com {
   root /storage
   file_server browse # list files in the directory
 }
 ```
-3. Restart Caddy: `sudo systemctl restart caddy`
+3. [Watch Step (MacOS)](https://www.youtube.com/watch?v=HsY76oRNH1E&ab_channel=SaadAta&t=115) Restart Caddy: `sudo systemctl restart caddy`
 4. Make sure Caddy is running and does not have any catastrophic errors:
 ```bash
 sudo systemctl status caddy
@@ -69,7 +69,7 @@ Mar 28 10:25:38 server caddy[1415]: {"level":"info","ts":1743171938.001667,"msg"
 Mar 28 10:25:38 server caddy[1415]: {"level":"info","ts":1743171938.0291815,"msg":"adapted config to >
 Mar 28 10:25:38 server systemd[1]: Started Caddy.
 ```
-5. Try to connect to the server using your browser using the url you included in the Caddy configuration file (ex. `https://example.com`) If you see a directory listing of the files in `/storage`, then you have successfully set up a webserver. If you see a security error or similar, Caddy may need some time to set up HTTPS certificates for your webserver. If you cannot connect at all, the domain settings may have not been propagated yet. Try again in a few minutes.
+5. [Watch Step (MacOS)](https://www.youtube.com/watch?v=HsY76oRNH1E&ab_channel=SaadAta&t=130) Try to connect to the server using your browser using the url you included in the Caddy configuration file (ex. `https://example.com`) If you see a directory listing of the files in `/storage`, then you have successfully set up a webserver. If you see a security error or similar, Caddy may need some time to set up HTTPS certificates for your webserver. If you cannot connect at all, the domain settings may have not been propagated yet. Try again in a few minutes.
 
 ### Uploading Files to the Webserver
 
