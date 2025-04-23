@@ -36,7 +36,7 @@ Example using [Ubuntu 12.04](https://bulletin.nyiyui.ca/2025/03/ubuntu12.04.nxpk
 2025/03/19 01:22:41 2. Run using caviar-vmnetx to run the VM: caviar-vmnetx --package /caviar/c56617b6819182c4f1320e2d2a14b9cc7c172702d13dc5f019bfa0c6adb99adf
 ```
 
-2. Upload the converted files to a webserver. If you do not have a webserver setup, you can follow [./webserver.md](this) tutorial. 
+2. Upload the converted files to a webserver. If you do not have a webserver setup, you can follow [this](./webserver.md) tutorial. 
 
 Example:
 `scp -r /tmp/tmp.swHtNei2oI/* user@webserver:/path/to/webserver`
