@@ -8,7 +8,7 @@ Caviar has two main ways of obtaining files/software:
 
 ## Setting up a Webserver for Caviar
 
-Prerequisites:
+### Prerequisites:
 - a domain for the webserver that points to the server's public IP address
   - Note: replace `example.com` with your domain in the examples below
   - If you are using Cloudflare, do not enable proxying (the orange cloud icon) for the domain (to keep this tutorial simple)
@@ -26,19 +26,16 @@ You can also use a PC at home/work as a webserver, but it should have a static p
 Some universities provide public IP addresses to staff and students as well.
 
 For example, Georgia Tech staff and students can use their own PC as a webserver:
-- Connect a PC to LAWN via Ethernet (wired) or Wi-Fi (Ethernet is preferred as the connection it creates is more stable)
-- Go to `portal.lawn.gatech.edu` and register your device (if necessary, i.e. your PC does not have a connection yet)
-- [Disable the inbound firewall](https://gatech.service-now.com/technology?id=kb_article_view&sysparm_article=KB0040333) on your PC
-  - This allows your PC to accept incoming connections from the Internet, a crucial requirement for a webserver
+1. Connect a PC to LAWN via Ethernet (wired) or Wi-Fi (Ethernet is preferred as the connection it creates is more stable). 
+2. Go to `portal.lawn.gatech.edu` and register your device (if necessary, i.e. your PC does not have a connection yet). 
+3. [Disable the inbound firewall](https://gatech.service-now.com/technology?id=kb_article_view&sysparm_article=KB0040333) on your PC. 
 
 ### Setting up the Webserver Software
 
-For simplicity, we will assume you are using Debian and do not have a webserver already set up,
-and will be using the [Caddy](https://caddyserver.com/) webserver software.
+For simplicity, we will be using the [Caddy](https://caddyserver.com/) webserver software. Caddy is a modern webserver that is easy to set up and use. The following tutorial is written for Debian. However, this workflow can easily be adjusted for other operating systems (such as MacOS). 
 
-Caddy is a modern webserver that is easy to set up and use.
-
-Install Caddy: `sudo apt install caddy`
+Install Caddy: 
+`sudo apt install caddy`
 
 We will setup the webserver to serve files from a directory on the server.
 
