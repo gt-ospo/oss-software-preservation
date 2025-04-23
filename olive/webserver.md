@@ -34,7 +34,7 @@ For example, Georgia Tech staff and students can use their own PC as a webserver
 
 For simplicity, we will be using the [Caddy](https://caddyserver.com/) webserver software. Caddy is a modern webserver that is easy to set up and use. The following tutorial is written for Debian. However, this workflow can easily be adjusted for other operating systems (such as MacOS). 
 
-1. We will setup the webserver to serve files from a directory on the server. Install Caddy with teh following command: `sudo apt install caddy`
+1. [Watch Step (MacOS)](https://www.youtube.com/watch?v=HsY76oRNH1E&ab_channel=SaadAta&t=11) We will setup the webserver to serve files from a directory on the server. Install Caddy with teh following command: `sudo apt install caddy`
 2. Write the following code in the `/etc/caddy/Caddyfile` file. Replace `https://example.com` with your public IP address (or a domain name that you own)
 ```caddy
 https://example.com {
