@@ -11,7 +11,7 @@
 Note: In order to distinguish our fork, we have renamed VMNetX to Caviar.
 
 1. The first step is to download Caviar. 
-  - [Watch Step](https://youtu.be/uRjmTm59spk&t=5) Go to https://github.com/gt-ospo/vmnetx/actions/workflows/go.yml 
+  - [Watch Step](https://mediaspace.gatech.edu/media/Olive+Archive+Tutorial%3A+First+VM/1_ge6ycyd4?st=5) Go to https://github.com/gt-ospo/vmnetx/actions/workflows/go.yml 
   - [Watch Step](https://youtu.be/uRjmTm59spk&t=19) Click the first green checkmark link
   - [Watch Step](https://youtu.be/uRjmTm59spk&t=24) Click the `build-caviar` artifact to download it
 2. Next, preform the following setup:
