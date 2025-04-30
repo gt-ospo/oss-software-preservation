@@ -18,9 +18,9 @@ We will use an image with OpenMPI and a compiler suite preinstalled, and then us
 - The user is `pwischangeme` and the password for both the user and root is `changeme`. (You do not, in fact, have to change the password :D - this VM isn't meant to be secure.)
 
 ## Launching the VM 
-1. [Watch Step](https://www.youtube.com/watch?v=Dy209cgrlfQ&ab_channel=SaadAta&t=10) Mount the caviar remote directory to your machine. If you do not know how to do this, follow [this](./caviar-installation.md) tutorial. 
-2. [Watch Step](https://www.youtube.com/watch?v=Dy209cgrlfQ&ab_channel=SaadAta&t=50) Make a new image with the following command: `qemu-img create -f qcow2 -F qcow2 -b /caviar/21491a518580df55daa3a2de01d2374d4ecb67b39e605ff90be051d3304d0926 debian-12-openmpi.qcow2`
-3. [Watch Step](https://www.youtube.com/watch?v=Dy209cgrlfQ&ab_channel=SaadAta&t=58) Now, start the virtual machine with the following command:
+1. [Watch Step](https://mediaspace.gatech.edu/media/Olive+Archive+Tutorial%3A+OpenMPI/1_cyztdra8/-1?st=10) Mount the caviar remote directory to your machine. If you do not know how to do this, follow [this](./caviar-installation.md) tutorial. 
+2. [Watch Step](https://mediaspace.gatech.edu/media/Olive+Archive+Tutorial%3A+OpenMPI/1_cyztdra8/-1?st=50) Make a new image with the following command: `qemu-img create -f qcow2 -F qcow2 -b /caviar/21491a518580df55daa3a2de01d2374d4ecb67b39e605ff90be051d3304d0926 debian-12-openmpi.qcow2`
+3. [Watch Step](https://mediaspace.gatech.edu/media/Olive+Archive+Tutorial%3A+OpenMPI/1_cyztdra8/-1?st=58) Now, start the virtual machine with the following command:
 ```qemu-kvm -m 4096 -smp 4 -netdev user,id=net0,hostfwd=tcp::8022-:22 -device virtio-net-pci,netdev=net0 debian-12-openmpi.qcow2```
 
 Argument breakdown: 
@@ -34,8 +34,8 @@ Argument breakdown:
 ## Compile and run a simple OpenMPI program
 
 4. Once the virtual machine is running, verify you can SSH into it by running the following command in the terminal: `ssh -p 8022 pwischangeme@localhost`.
-5. [Watch Step](https://www.youtube.com/watch?v=Dy209cgrlfQ&ab_channel=SaadAta&t=214) In this tutorial, we will use an openMPI test file called `ringshift.c` which can be found [here](./mpi-ringshift/ringshift.c). Copy over the `ringshift.c` source files from your computer to the VM by running the following command in your computer (not the VM): `scp -P 8022 -r /path/to/mpi-ringshift pwischangeme@localhost:/home/pwischangeme`
-6. [Watch Step](https://www.youtube.com/watch?v=Dy209cgrlfQ&ab_channel=SaadAta&t=239) Now, SSH into the VM and compile the program:
+5. [Watch Step](https://mediaspace.gatech.edu/media/Olive+Archive+Tutorial%3A+OpenMPI/1_cyztdra8/-1?st=214) In this tutorial, we will use an openMPI test file called `ringshift.c` which can be found [here](./mpi-ringshift/ringshift.c). Copy over the `ringshift.c` source files from your computer to the VM by running the following command in your computer (not the VM): `scp -P 8022 -r /path/to/mpi-ringshift pwischangeme@localhost:/home/pwischangeme`
+6. [Watch Step](https://mediaspace.gatech.edu/media/Olive+Archive+Tutorial%3A+OpenMPI/1_cyztdra8/-1?st=239) Now, SSH into the VM and compile the program:
 
 ```bash
 mpicc -o ringshift ringshift.c
