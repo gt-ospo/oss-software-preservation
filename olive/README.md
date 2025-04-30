@@ -61,6 +61,8 @@ I want to...
 - [Glossary](./glossary.md)  
   Definitions of terms used in Olive, VMNetX, and Caviar.
 
+- [All Olive / Caviar Video Tutorials](https://mediaspace.gatech.edu/playlist/dedicated/1_14mg33ev/)
+
 ## EaaSI vs Olive
 
 We provide a full [comparison of Olive and EaaSI](../other-platforms/eaasi_olive_comparison.md), including differences in architecture, scalability, and emulator support.
