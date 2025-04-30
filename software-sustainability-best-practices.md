@@ -26,7 +26,7 @@ flowchart TD
     dioscuri[Dioscuri, an Intel 8086 emulator]
     build -->|DOS| eaasi
     build -->|Mac| eaasi
-    build -->|Everything Else| distrib
+    build -->|Other Architectures| distrib
     distrib{Do you want to distribute the artifact?}
     distrib -->|Yes, to librarians and researchers| eaasi
     distrib -->|Yes, to librarians and researchers| vmnetx
@@ -35,6 +35,15 @@ flowchart TD
     plain_vm[A plain old Virtual Machine Image]
     vmnetx[VMNetX / Olive Executable Archive - quick startup with local resources; low cost]
 ```
+
+TODO
+
+3) Distribute it - should this be "server based distribution" vs "self hosted distribution"?
+differentiate distribution platforms
+- EaaSI - server hosted
+- VMNetX
+
+1) You can technically build a container with an executable (copying over the files from an existing OS). Should this box be different? 
 
 ## General Guidance
 
