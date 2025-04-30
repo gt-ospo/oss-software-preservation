@@ -39,6 +39,7 @@ I want to...
   - [Import Olive Executable Archive VMs (NXPK files) to Caviar](./import-nxpk.md)
 - [Disable Autoupgrade on an OS](../autoupgrade/README.md)
   How to disable autoupgrade on a VM OS (e.g., Ubuntu 12.04) to prevent unwanted updates.
+- [All Olive / Caviar Video Tutorials](https://mediaspace.gatech.edu/playlist/dedicated/1_14mg33ev/)
 
 ## Tutorial: System Requirements For Caviar
 - Linux based host OS (within past 5 years)
@@ -60,8 +61,6 @@ I want to...
 
 - [Glossary](./glossary.md)  
   Definitions of terms used in Olive, VMNetX, and Caviar.
-
-- [All Olive / Caviar Video Tutorials](https://mediaspace.gatech.edu/playlist/dedicated/1_14mg33ev/)
 
 ## EaaSI vs Olive
 
