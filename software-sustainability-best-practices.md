@@ -43,7 +43,17 @@ differentiate distribution platforms
 - EaaSI - server hosted
 - VMNetX
 
-1) You can technically build a container with an executable (copying over the files from an existing OS). Should this box be different? 
+1) You can technically build a container with an executable (copying over the files from an existing OS). Should this box be different?
+
+source code - how to distribute?
+
+organize into three vertices:
+- can access source code
+- build artifact/executable done
+
+container vs VM?
+- Apptainer on mac: you have to do VM then run the container
+- Saad running caviar
 
 ## General Guidance
 
