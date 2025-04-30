@@ -31,7 +31,7 @@ flowchart TD
     distrib -->|Yes, to librarians and researchers| eaasi
     distrib -->|Yes, to librarians and researchers| vmnetx
     distrib -->|Does Not Matter| plain_vm
-    eaasi[EaaSI - web browser access to virtual machines]
+    eaasi[EaaSI - web browser access to virtual machines, not great for performance]
     plain_vm[A plain old Virtual Machine Image]
     vmnetx[VMNetX / Olive Executable Archive - quick startup with local resources; low cost]
 ```
