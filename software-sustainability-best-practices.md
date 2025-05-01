@@ -4,6 +4,38 @@ This page is meant to collect some resources that you can use to choose what ver
 
 When preserving software, it is important to consider the version of the software you are preserving. Different versions of software can have different features, bugs, and compatibility with other software. Preserving the exact version of the software that was used in a project can help ensure that the project can be reproduced in the future.
 
+Additionally, there are many methods for preserving software, from version control systems (e.g. [Git](https://git-scm.com), [Mercurial](https://www.mercurial-scm.org/), [Subversion](https://subversion.apache.org/)) to methods specialized for preservation including the [Internet Archive](https://archive.org/).
+Each method has its own strengths and weaknesses, and the choice of method will depend on the specific needs of the project.
+
+## Software Preservation Method Flowchart
+
+```mermaid
+flowchart TD
+    start[Start]
+    start --> body
+    body{Are you preserving the software itself or data?}
+    body -->|Software e.g. a game| build
+    body -->|Data e.g. CAD drawings| eaasi
+    src{Do you have access to the source code?}
+    src -->|Yes| build-oci
+    src -->|No| distrib
+    build{What hardware and OS does it require?}
+    build -->|64-bit Intel Linux| src
+    build -->|Intel 8086| dioscuri
+    build-oci[Build an OCI/Docker Container yourself]
+    dioscuri[Dioscuri, an Intel 8086 emulator]
+    build -->|DOS| eaasi
+    build -->|Mac| eaasi
+    build -->|Everything Else| distrib
+    distrib{Do you want to distribute the artifact?}
+    distrib -->|Yes, to librarians and researchers| eaasi
+    distrib -->|Yes, to librarians and researchers| vmnetx
+    distrib -->|Does Not Matter| plain_vm
+    eaasi[EaaSI - web browser access to virtual machines]
+    plain_vm[A plain old Virtual Machine Image]
+    vmnetx[VMNetX / Olive Executable Archive - quick startup with local resources; low cost]
+```
+
 ## General Guidance
 
 As a general fact, it is not a usual concern to preserve libraries on their own;

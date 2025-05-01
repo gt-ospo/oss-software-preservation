@@ -21,6 +21,14 @@ This repository focuses on:
 
 ## Platforms and Tools
 
+### Version Control Systems (e.g. Git, Mercurial, Subversion)
+Version control systems (VCSs) are essential for tracking changes to source code and build instructions. They do not typically include the final artifacts (e.g., executable software, final designs) themselves.
+Therefore, VCSs are not a complete solution for software preservation.
+
+### OCI Containers (Docker Containers)
+OCI containers are a way to package software and its dependencies into a single "image" (essentially a file containing everything needed to run the software except the Linux kernel, part of a Linux operating system).
+OCI containers rely on the Linux kernel's version on the host system, so future versions of Linux may break compatibility with older containers (probably very rare).
+
 ### EaaSI (Emulation-as-a-Service Infrastructure)
 EaaSI is a Yale-led platform designed to allow users to create and share emulated computing environments through a web interface.
 
